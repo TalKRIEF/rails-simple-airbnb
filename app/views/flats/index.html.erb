@@ -1,0 +1,19 @@
+<h1>Flats</h1>
+  <% @flats.each do |flat| %>
+  <div class="card-group">
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="https://source.unsplash.com/random?city" alt="flats">
+  <div class="card-body">
+    <h5 class="card-title"><%= flat.name %></h5>
+    <p class="card-text"><%= flat.description %></p>
+
+    <%= link_to "Add a flat", new_flat_path, class: "btn btn-primary" %>
+  </div>
+</div>
+  </div>
+
+  <%= link_to flat.name, flat_path(flat) %>
+  <% end %>
+
+<%= link_to "Add a flat", new_flat_path %>
